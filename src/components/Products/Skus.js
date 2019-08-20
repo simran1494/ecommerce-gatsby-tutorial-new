@@ -20,6 +20,7 @@ class Skus extends Component {
   // https://dashboard.stripe.com/account/apikeys
   componentDidMount() {
     const stripe = window.Stripe(process.env.GATSBY_STRIPE_PUBLIC_KEY)
+   // console.log("stripe...."+JSON.stringify(stripe))
     this.setState({ stripe })
   }
 
@@ -36,6 +37,7 @@ class Skus extends Component {
                   id
                   currency
                   price
+                  image
                   attributes {
                     name
                   }

@@ -50,18 +50,16 @@ const SkuCard = class extends React.Component {
 
   render() {
     const sku = this.props.sku
-    return (
-      <div style={cardStyles}>
+    console.log("skuu.."+JSON.stringify(sku));
+    return <div style={cardStyles}>
         <h4>{sku.attributes.name}</h4>
-        <p>Price: {formatPrice(sku.price, sku.currency)}</p>
-        <button
-          style={buttonStyles}
-          onClick={event => this.redirectToCheckout(event, sku.id)}
-        >
+        <img src={sku.image} alt="Logo" /><p>
+          Price: {formatPrice(sku.price, sku.currency)}
+        </p>
+        <button style={buttonStyles} onClick={event => this.redirectToCheckout(event, sku.id)}>
           BUY ME
         </button>
       </div>
-    )
   }
 }
 
