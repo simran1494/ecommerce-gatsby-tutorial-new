@@ -53,9 +53,10 @@ const SkuCard = class extends React.Component {
     console.log("skuu.."+JSON.stringify(sku));
     return <div style={cardStyles}>
         <h4>{sku.attributes.name}</h4>
-        <img src={sku.image} alt="Logo" /><p>
-          Price: {formatPrice(sku.price, sku.currency)}
-        </p>
+        <div>
+          <img src={sku.image} alt="Logo" style={{ height: '266.67px', width: '264px' }} />
+        </div>
+        <p>Price: {formatPrice(sku.price, sku.currency)}</p>
         <button style={buttonStyles} onClick={event => this.redirectToCheckout(event, sku.id)}>
           BUY ME
         </button>
